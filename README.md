@@ -65,12 +65,10 @@ import toObservable from "fafgag/lib/zen.js" // for ES module environment
 import toObservable from "fafgag/zen" // for other environments
 ```
 
-| file | type | module |
+|  | native (babel) | zen-observable |
 | :-- | :-- | :-- |
-| index.js | native (babel) | UMD |
-| zen.js | zen-observable | UMD |
-| lib/index.js | native (babel) | ES module |
-| lib/zen.js | zen-observable | ES module |
+| UMD | index.js | zen.js |
+| ES module | lib/index.js | lib/zen.js |
 
 ## License
 
