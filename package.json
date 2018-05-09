@@ -1,0 +1,44 @@
+{
+  "name": "fafgag",
+  "version": "0.1.0",
+  "description": "Creates an Observable from FAFGAG (Function / Async Function / Generator / Async Generator)",
+  "main": "index.js",
+  "module": "lib/index.js",
+  "files": [
+    "index.js",
+    "zen.js",
+    "lib/index.js",
+    "lib/zen.js"
+  ],
+  "scripts": {
+    "build": "npm run pretier && npm run prepend && npm run rollup && npm run rollup-zen",
+    "prepend": "cat lib/prefix lib/index.js > lib/zen.js",
+    "rollup": "rollup -c -i lib/index.js -o index.js",
+    "rollup-zen": "rollup -c -i lib/zen.js -o zen.js",
+    "pretier": "prettier --write {lib,test}/**/*.js",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cognitom/fafgag.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cognitom/fafgag/issues"
+  },
+  "homepage": "https://github.com/cognitom/fafgag#readme",
+  "devDependencies": {
+    "prettier": "^1.12.1",
+    "rollup": "^0.58.2",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
+  "optionalDependencies": {
+    "zen-observable": "^0.8.8"
+  },
+  "prettier": {
+    "semi": false
+  }
+}

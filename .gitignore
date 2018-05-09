@@ -1,0 +1,7 @@
+node_modules
+*.log
+*.map
+/index.js
+/zen.js
+/lib/zen.js
+/coverage
