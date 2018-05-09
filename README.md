@@ -30,27 +30,13 @@ await function* ag(arg) {
   yield (n + 1) * (n + 1)
 }
 
-toObservable(f, 5).subscribe(console.log) // output: 25
-toObservable(af, 5).subscribe(console.log) // output: (one sec later) 25
-toObservable(g, 1).subscribe(console.log) // output: 25 36
-toObservable(ag, 1).subscribe(console.log) // output: 26 (one sec later) 36
+toObservable(f(5)).subscribe(console.log) // output: 25
+toObservable(af(5)).subscribe(console.log) // output: (one sec later) 25
+toObservable(g(5)).subscribe(console.log) // output: 25 36
+toObservable(ag(5)).subscribe(console.log) // output: 26 (one sec later) 36
 ```
 
-### Passing Arguments
-
-```javascript
-function f(...args) {
-  return args.reduce((acc, cur) => acc + cur, 0)
-}
-// without any arguments
-toObservable(f).subscribe(console.log) // output: 0
-// with a single argument
-toObservable(f, 1).subscribe(console.log) // output: 1
-// with multiple arguments
-toObservable(f, 1, 2, 3).subscribe(console.log) // output: 6
-```
-
-### Native / Zen
+## Native / Zen
 
 If you prefer Babel's polyfill, import `fafgag` like this:
 
@@ -65,10 +51,10 @@ import toObservable from "fafgag/lib/zen.js" // for ES module environment
 import toObservable from "fafgag/zen" // for other environments
 ```
 
-|  | native (babel) | zen-observable |
-| :-- | :-- | :-- |
-| UMD | index.js | zen.js |
-| ES module | lib/index.js | lib/zen.js |
+|  | UMD | ES module |  |
+| :-- | :-- | :-- | :-- |
+| native (babel) | "fafgag" | "fafgag" | standard, but absent of methods below |
+| zen-observable | "fafgag/zen" | "fafgag/lib/zen.js" | `map()`, `filter()`, `flatMap()`, etc. |
 
 ## License
 
