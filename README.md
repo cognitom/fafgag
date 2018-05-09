@@ -20,11 +20,11 @@ async function af(n) {
   await sleep(1000)
   return n * n
 }
-function* g(arg) {
+function* g(n) {
   yield n * n
   yield (n + 1) * (n + 1)
 }
-await function* ag(arg) {
+await function* ag(n) {
   yield n * n
   await sleep(1000)
   yield (n + 1) * (n + 1)
