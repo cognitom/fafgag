@@ -22,9 +22,9 @@
     "type": "git",
     "url": "git+https://github.com/cognitom/fafgag.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["observable", "async iteration", "async generator"],
+  "author": "Tsutomu Kawamura",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/cognitom/fafgag/issues"
   },
