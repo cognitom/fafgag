@@ -1,5 +1,8 @@
 # FAFGAG
 
+[![Travis CI](https://img.shields.io/travis/cognitom/fafgag/master.svg)](https://travis-ci.com/cognitom/fafgag)
+[![npm](https://img.shields.io/npm/v/fafgag.svg)](https://www.npmjs.org/package/fafgag)
+
 Creates an Observable from FAFGAG (Function / Async Function / Generator / Async Generator)
 
 ## Installation
