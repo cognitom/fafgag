@@ -1,6 +1,6 @@
 # FAFGAG
 
-[![Travis CI](https://img.shields.io/travis/cognitom/fafgag/master.svg)](https://travis-ci.com/cognitom/fafgag)
+[![Travis CI](https://travis-ci.com/cognitom/fafgag.svg?branch=master)](https://travis-ci.com/cognitom/fafgag)
 [![npm](https://img.shields.io/npm/v/fafgag.svg)](https://www.npmjs.org/package/fafgag)
 
 Creates an Observable from FAFGAG (Function / Async Function / Generator / Async Generator)
@@ -12,6 +12,13 @@ $ npm install fafgag
 ```
 
 ## Usage
+
+`fafgag` converts the results which returned from FAFGAG into Observables:
+
+- *Function* --> **Value** --> Observable
+- *Async Function* --> **Promise** --> Observable
+- *Generator* --> **Iterator** --> Observable
+- *Async Generator* --> **Async Iterator** --> Observable
 
 ```javascript
 import toObservable from "fafgag"
