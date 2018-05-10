@@ -16,13 +16,18 @@
     "rollup": "rollup -c -i lib/index.js -o index.js",
     "rollup-zen": "rollup -c -i lib/zen.js -o zen.js",
     "pretier": "prettier --write {lib,test}/**/*.js",
-    "prepublish": "npm run build"
+    "pretest": "npm run build",
+    "test": "mocha -r esm test/*.spec.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cognitom/fafgag.git"
   },
-  "keywords": ["observable", "async iteration", "async generator"],
+  "keywords": [
+    "observable",
+    "async iteration",
+    "async generator"
+  ],
   "author": "Tsutomu Kawamura",
   "license": "MIT",
   "bugs": {
@@ -30,6 +35,8 @@
   },
   "homepage": "https://github.com/cognitom/fafgag#readme",
   "devDependencies": {
+    "esm": "^3.0.32",
+    "mocha": "^5.1.1",
     "prettier": "^1.12.1",
     "rollup": "^0.58.2",
     "rollup-plugin-node-resolve": "^3.3.0",
