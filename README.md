@@ -40,10 +40,10 @@ await function* ag(n) {
   yield (n + 1) * (n + 1)
 }
 
-toObservable(f(5)).subscribe(console.log) // output: 25
-toObservable(af(5)).subscribe(console.log) // output: (one sec later) 25
-toObservable(g(5)).subscribe(console.log) // output: 25 36
-toObservable(ag(5)).subscribe(console.log) // output: 26 (one sec later) 36
+toObservable(f, 5).subscribe(console.log) // output: 25
+toObservable(af, 5).subscribe(console.log) // output: (one sec later) 25
+toObservable(g, 5).subscribe(console.log) // output: 25 36
+toObservable(ag, 5).subscribe(console.log) // output: 26 (one sec later) 36
 ```
 
 ## Native / Zen

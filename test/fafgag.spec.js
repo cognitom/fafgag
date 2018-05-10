@@ -7,7 +7,7 @@ describe("fafgag", () => {
       return n * n
     }
     const values = []
-    toObservabele(f(5)).subscribe({
+    toObservabele(f, 5).subscribe({
       next(value) {
         values.push(value)
       },
@@ -24,7 +24,7 @@ describe("fafgag", () => {
       return n * n
     }
     const values = []
-    toObservabele(af(5)).subscribe({
+    toObservabele(af, 5).subscribe({
       next(value) {
         values.push(value)
       },
@@ -41,7 +41,7 @@ describe("fafgag", () => {
       return (n + 1) * (n + 1)
     }
     const values = []
-    toObservabele(g(5)).subscribe({
+    toObservabele(g, 5).subscribe({
       next(value) {
         values.push(value)
       },
@@ -60,7 +60,7 @@ describe("fafgag", () => {
       return (n + 1) * (n + 1)
     }
     const values = []
-    toObservabele(ag(5)).subscribe({
+    toObservabele(ag, 5).subscribe({
       next(value) {
         values.push(value)
       },
@@ -77,7 +77,7 @@ describe("fafgag", () => {
       // return nothing
     }
     const values = []
-    toObservabele(f()).subscribe({
+    toObservabele(f).subscribe({
       next(value) {
         values.push(value)
       },
@@ -101,7 +101,7 @@ describe("fafgag", () => {
       return ""
     }
     const values = []
-    toObservabele(ag(5)).subscribe({
+    toObservabele(ag, 5).subscribe({
       next(value) {
         values.push(value)
       },
@@ -112,6 +112,16 @@ describe("fafgag", () => {
         equal(values[2], 36)
         equal(values[3], null)
         equal(values[4], "")
+        done()
+      }
+    })
+  })
+  it("throws an error when no fafgag provided as the first argument", done => {
+    toObservabele(undefined).subscribe({
+      next(value) {},
+      complete() {},
+      error(e) {
+        equal(e.message, "Not a FAFGAG")
         done()
       }
     })
