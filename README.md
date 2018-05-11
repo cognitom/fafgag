@@ -15,10 +15,10 @@ $ npm install fafgag
 
 `fafgag` converts the results which returned from FAFGAG into Observables:
 
-- *Function* --> **Value** --> Observable
-- *Async Function* --> **Promise** --> Observable
-- *Generator* --> **Iterator** --> Observable
-- *Async Generator* --> **Async Iterator** --> Observable
+- **F**unction --> *Value* --> Observable
+- **A**sync **F**unction --> *Promise* --> Observable
+- **G**enerator --> *Iterator* --> Observable
+- **A**sync **G**enerator --> *Async Iterator* --> Observable
 
 ```javascript
 import toObservable from "fafgag"
@@ -46,6 +46,8 @@ toObservable(g, 5).subscribe(console.log) // output: 25 36
 toObservable(ag, 5).subscribe(console.log) // output: 26 (one sec later) 36
 ```
 
+**Note**: only when it get subscribed, it will run. This laziness is the basic behavior of Observables.
+
 ## Native / Zen
 
 If you prefer Babel's polyfill, import `fafgag` like this:
@@ -61,9 +63,9 @@ import toObservable from "fafgag/lib/zen.js" // for ES module environment
 import toObservable from "fafgag/zen" // for other environments
 ```
 
-|  | UMD | ES module |  |
+|  | UMD | ES module | Note |
 | :-- | :-- | :-- | :-- |
-| native (babel) | "fafgag" | "fafgag" | standard, but absent of methods below |
+| native (babel) | "fafgag" | "fafgag" | standard, but w/o these methods below |
 | zen-observable | "fafgag/zen" | "fafgag/lib/zen.js" | `map()`, `filter()`, `flatMap()`, etc. |
 
 ## License
