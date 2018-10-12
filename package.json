@@ -1,6 +1,6 @@
 {
   "name": "fafgag",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Creates an Observable from FAFGAG (Function / Async Function / Generator / Async Generator)",
   "main": "index.js",
   "module": "lib/index.js",
